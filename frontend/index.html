@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML 5 Boilerplate</title>
+  </head>
+  <body style="margin: 0">
+    <div
+      style="
+        background-color: aquamarine;
+        padding: 0.1rem 2rem 0.1rem;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+      "
+    >
+      <h1>Penampil data</h1>
+      <button><a href="form.html">Tambah data</a></button>
+    </div>
+    <div>
+      <table id="data_table"></table>
+    </div>
+
+    <script>
+      const display_data = (data) => {
+        const table = document.getElementById("data_table");
+        const table_head = document.createElement("tr");
+        table_head.innerHTML = `
+            <th>Name</th>
+            <th>Company</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Mobile</th>`;
+        table.appendChild(table_head);
+        data.map((d) => {
+          const table_data = document.createElement("tr");
+          table_data.innerHTML = `
+                <td>${d.name}</td>
+                <td>${d.company}</td>
+                <td>${d.gender}</td>
+                <td>${d.email}</td>
+                <td>${d.mobile}</td>
+                `;
+          table.appendChild(table_data);
+        });
+      };
+
+      const load_data = async () => {
+        const data_raw = await fetch("http://localhost:8000/");
+        const data = await data_raw.json();
+        display_data(data);
+      };
+
+      load_data();
+    </script>
+  </body>
+</html>

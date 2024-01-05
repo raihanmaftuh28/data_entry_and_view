@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Alfred",
+    "company": "Jaya Makmur",
+    "gender": "Male",
+    "email": "alfred@mail.com",
+    "mobile": "+628123647732"
+  },
+  {
+    "name": "Mail",
+    "company": "Sentosa Abadi",
+    "gender": "Male",
+    "email": "mail@mail.com",
+    "mobile": "+628123643232"
+  },
+  {
+    "name": "Susi",
+    "company": "Air Isus",
+    "gender": "Female",
+    "email": "susi@mail.com",
+    "mobile": "+628133547732"
+  },
+  {
+    "name": "Yana",
+    "company": "Mulia Mas",
+    "gender": "Female",
+    "email": "yana@mail.com",
+    "mobile": "+628123649358"
+  },
+  {
+    "name": "Nando",
+    "company": "Future Tech",
+    "gender": "Male",
+    "email": "nando@mail.com",
+    "mobile": "+62812363423"
+  },
+  {
+    "name": "Maki",
+    "company": "Jaya Makmur",
+    "gender": "Male",
+    "email": "maki@mail.com",
+    "mobile": "+6281433647732"
+  },
+  {
+    "name": "Maftuh",
+    "company": "Geoseismal Research Center MIPA UGM",
+    "gender": "male",
+    "email": "maftuh@gmail.com",
+    "mobile": "082255268026"
+  }
+]

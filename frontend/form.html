@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML 5 Boilerplate</title>
+  </head>
+  <body style="margin: 0">
+    <div
+      style="
+        background-color: aquamarine;
+        padding: 0.1rem 2rem 0.1rem;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+      "
+    >
+      <h1>Penampil data</h1>
+      <button><a href="index.html">Kembali</a></button>
+    </div>
+    <div>
+      <form>
+        <label for="name">Name:</label><br />
+        <input type="text" id="name" name="name" /><br />
+        <label for="gender">Gender :</label><br />
+        <input type="radio" id="Male" name="gender" value="male" />
+        <label for="male">Male</label>
+        <input type="radio" id="Female" name="gender" value="Female" />
+        <label for="female">Female</label> <br />
+        <label for="Company">Company:</label><br />
+        <input type="text" id="company" name="company" /><br />
+        <label for="Email">Email:</label><br />
+        <input type="email" id="email" name="email" /><br />
+        <label for="Mobile">Mobile:</label><br />
+        <input type="number" id="mobile" name="mobile" /><br />
+      </form>
+    </div>
+    <div>
+      <button onclick="send_data()">Tambahkan</button>
+    </div>
+    <script>
+      const send_data = async () => {
+        const gender = document.getElementsByName("gender");
+        let gender_value = "";
+        for (let i = 0; i < gender.length; i++) {
+          if (gender[i].checked) {
+            gender_value = gender[i].value;
+          }
+        }
+        const data = {
+          name: document.getElementById("name").value,
+          company: document.getElementById("company").value,
+          gender: gender_value,
+          email: document.getElementById("email").value,
+          mobile: document.getElementById("mobile").value,
+        };
+
+        try {
+          const response = await fetch("http://localhost:8000/create_data", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+          });
+          console.log(response);
+        } catch (error) {
+          print(error);
+        }
+      };
+    </script>
+  </body>
+</html>
